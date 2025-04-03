@@ -1,0 +1,113 @@
+# Python 기본 문법 정리
+
+## 1. 출력
+```python
+print("Hello, Python!")
+```
+
+## 2. 변수와 자료형
+```python
+num = 10        # 정수형
+pi = 3.14       # 실수형
+name = "Python" # 문자열
+is_true = True  # 불리언
+```
+
+## 3. 리스트 & 딕셔너리
+```python
+numbers = [1, 2, 3, 4, 5]  # 리스트
+dict_example = {"name": "Alice", "age": 25}  # 딕셔너리
+```
+
+## 4. 함수
+```python
+def add(a, b):
+    return a + b
+
+# 호출
+result = add(3, 5)
+print(result)  # 8
+```
+
+## 5. 조건문
+```python
+x = 10
+if x > 5:
+    print("큰 값")
+elif x == 5:
+    print("같은 값")
+else:
+    print("작은 값")
+```
+
+## 6. 반복문
+```python
+for i in range(5):
+    print(i)  # 0, 1, 2, 3, 4
+
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+```
+
+## 7. 클래스 & 객체지향
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"저는 {self.name}, 나이는 {self.age}살 입니다.")
+
+p = Person("홍길동", 20)
+p.introduce()
+```
+
+## 8. 예외 처리
+```python
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("0으로 나눌 수 없습니다.")
+```
+
+## 9. 파일 입출력
+```python
+# 파일 쓰기
+with open("test.txt", "w") as file:
+    file.write("Hello, File!")
+
+# 파일 읽기
+with open("test.txt", "r") as file:
+    content = file.read()
+    print(content)
+```
+
+## 10. 리스트 컴프리헨션
+```python
+squares = [x**2 for x in range(10)]
+print(squares)  # [0, 1, 4, 9, ..., 81]
+```
+
+## 11. 람다 함수
+```python
+multiply = lambda x, y: x * y
+print(multiply(3, 4))  # 12
+```
+
+## 12. 비동기 처리 (async/await)
+```python
+import asyncio
+
+async def fetch_data():
+    await asyncio.sleep(2)
+    return "데이터 로드 완료"
+
+async def main():
+    print("로딩 중...")
+    data = await fetch_data()
+    print(data)
+
+asyncio.run(main())
